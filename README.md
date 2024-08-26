@@ -1,96 +1,50 @@
-# prueba-entrevista-
-Interview web project - Entrevista proyecto web
-// Adjunto el codigo de html y js de la prueba tecnica
-este codigo tiene 4 partes 
-el primero es codigo esta realizado con el fin de desrrollar el menu de kitclub 
-en la segunda parte tenemos un tipo de carrucel que esta en la pagina de  kitclub 
-en la tercera tenemos el input de la publicacion 
-el cuarto y el ultimo tenenmos la publiacacion en donde se muestra la imagen y el texto del anterior input 
-//___________________________________________________________________________________________
-<!DOCTYPE html>
-<html lang="en">
-  <head>
+Este documento HTML crea una interfaz de usuario para una página web llamada "KlipWall", parte de un proyecto más grande llamado "Klipclub". La página permite a los usuarios ver contenido en tendencia, interactuar con una barra de navegación, buscar contenido, ver notificaciones y realizar publicaciones con imágenes, videos y audio. A continuación se explica cada parte del documento en detalle:
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KlipWall</title>
-    <link rel="stylesheet" href="xd.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"
-    />
-    <!-- Cropper CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css"
-    />
-
+    <link rel="stylesheet" href="prueba.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css" />
     <style>
-      .close-btn {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        background-color: red;
-        color: white;
-        border: none;
-        border-radius: 50%;
-        width: 30px;
-        height: 30px;
-        cursor: pointer;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .preview-container {
-        position: relative;
-        margin-top: 20px;
-      }
+        .close-btn { /* Estilos para el botón de cierre */ }
+        .preview-container { /* Estilos para el contenedor de vista previa */ }
     </style>
-  </head>
-  <body>
-    <!-- parte 1 -->
-    <header class="navbar">
-      <div class="navbar-logo">
-        <img
-          src="https://pantherahub.com/storage/projects/9c379a6a-23c2-413d-9813-573105537510/b1a92306-e6e8-4699-964b-3306b78e06bd.jpg"
-          alt="Klipclub Logo"
-        />
-      </div>
-      <nav class="navbar-menu">
+</head>
+
+esto es para el menu de la pagina: 
+
+<header class="navbar">
+    <div class="navbar-logo">
+        <img src="..." alt="Klipclub Logo" />
+    </div>
+    <nav class="navbar-menu">
         <a href="#">Broadcasts</a>
         <a href="#">Virtual Events</a>
         <a href="#">Artists</a>
         <a href="#">KlipWall</a>
-      </nav>
-      <div class="navbar-search">
+    </nav>
+    <div class="navbar-search">
         <input type="text" placeholder="Search" />
         <i class="fas fa-search"></i>
-        <!-- Icono de búsqueda -->
         <i class="fas fa-video video-icon"></i>
-        <!-- Icono de vídeo -->
-      </div>
-      <div class="navbar-icons">
+    </div>
+    <div class="navbar-icons">
         <i class="comment icon"></i>
         <div class="notification-icon">
-          <i class="bell icon"></i>
-          <span class="notification-count">2</span>
-          <!-- Número de notificaciones -->
+            <i class="bell icon"></i>
+            <span class="notification-count">2</span>
         </div>
         <div class="user-avatar">
-          <img
-            src="https://xstore.8theme.com/elementor/demos/book-store/wp-content/uploads/sites/78/2022/05/Eleanor-Pena.jpeg"
-            alt="User Avatar"
-          />
+            <img src="..." alt="User Avatar" />
         </div>
-      </div>
-    </header>
+    </div>
+</header>
 
-    <!-- carrucel -->
+esto es el carrucel de la pagina con las imagenes : 
 
-    <section class="trending-now">
+ <section class="trending-now">
       <h2>Trending Now</h2>
       <div class="carousel-container">
         <div class="carousel">
@@ -184,10 +138,11 @@ el cuarto y el ultimo tenenmos la publiacacion en donde se muestra la imagen y e
       </div>
     </section>
 
-    <!-- aca se acaba el carrucel -->
 
-    <!-- parte 3 -->
-    <div class="klipwall-container">
+ Sección de Publicaciones de KlipWall :
+
+
+<div class="klipwall-container">
       <h1 class="ui header" style="color: #f2f2f2">KlipWall</h1>
       <div class="klipwall-post-box">
         <img
@@ -253,12 +208,15 @@ el cuarto y el ultimo tenenmos la publiacacion en donde se muestra la imagen y e
       </div>
     </div>
 
-    <!-- Mover el div de publicaciones aquí abajo -->
+Contenedor de Publicaciones: 
+
     <div class="posts-container">
-      <!-- Aquí se insertarán las publicaciones -->
-    </div>
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
+    <!-- Aquí se insertarán las publicaciones -->
+</div>
+
+estos son los scrips para todo el html : 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
     <script>
       const postInput = document.querySelector(".post-input");
       const expandedOptions = document.querySelector(".expanded-options");
@@ -543,5 +501,6 @@ el cuarto y el ultimo tenenmos la publiacacion en donde se muestra la imagen y e
       
       showSlide(currentIndex);
     </script>
-  </body>
-</html>
+
+
+
