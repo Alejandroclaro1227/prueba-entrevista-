@@ -1,0 +1,15 @@
+vista 
+
+from rest_framework import viewsets
+from .models import Reserva, Servicio
+from .serializers import ReservaSerializer, ServicioSerializer
+from rest_framework.permissions import IsAuthenticated
+
+class ReservaViewSet(viewsets.ModelViewSet):
+    queryset = Reserva.objects.all()
+    serializer_class = ReservaSerializer
+    permission_classes = [IsAuthenticated]  # Requiere autenticación
+
+class ServicioViewSet(viewsets.ModelViewSet):
+    queryset = Servicio.objects.all()
+    serializer_class = ServicioSerializer
