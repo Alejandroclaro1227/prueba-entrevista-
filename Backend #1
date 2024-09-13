@@ -1,0 +1,20 @@
+Backend Django Rest Framework
+
+# settings.py
+INSTALLED_APPS = [
+    'rest_framework',
+    'reservas',  # app de reservas
+    'django.contrib.auth',  # sistema de autenticación
+    # otras apps...
+]
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql11',
+        'NAME': 'reservas_db',
+        'USER': 'usuarioxd',
+        'PASSWORD': 'contraseñaxd12',
+        'HOST': 'localhost',
+        'PORT': '5430',
+    }
+}
