@@ -1,0 +1,11 @@
+ Estructura del Proyecto Front - react 
+
+
+frontend-reservas/
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── services/
+│   ├── App.js
+│   ├── index.js
+
