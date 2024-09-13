@@ -1,0 +1,29 @@
+Páginas Principales
+
+import React, { useEffect, useState } from 'react';
+import { obtenerReservas } from '../services/api';
+
+const ReservasPage = () => {
+  const [reservas, setReservas] = useState([]);
+
+  useEffect(() => {
+    obtenerReservas()
+      .then(response => setReservas(response.data))
+      .catch(error => console.error(error));
+  }, []);
+
+  return (
+    <div>
+      <h1>Lista de Reservas</h1>
+      <ul>
+        {reservas.map(reserva => (
+          <li key={reserva.id}>
+            Cliente: {reserva.cliente}, Servicio: {reserva.servicio.nombre}, Fecha: {new Date(reserva.fecha_reserva).toLocaleString()}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default ReservasPage;
