@@ -1,0 +1,19 @@
+Rutas de React
+
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import ReservasPage from './pages/ReservasPage';
+import CrearReservaForm from './components/CrearReservaForm';
+
+const App = () => {
+  return (
+    <Router>
+      <Switch>
+        <Route path="/reservas" component={ReservasPage} />
+        <Route path="/crear-reserva" component={CrearReservaForm} />
+      </Switch>
+    </Router>
+  );
+};
+
+export default App;
