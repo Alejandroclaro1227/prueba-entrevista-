@@ -1,0 +1,18 @@
+Servicio Axio
+
+import axios from 'axios';
+
+const API_URL = 'http://localhost:8000/api/';
+
+const api = axios.create({
+  baseURL: API_URL,
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
+
+export const obtenerReservas = () => api.get('reservas/');
+export const crearReserva = (reserva) => api.post('reservas/', reserva);
+export const modificarReserva = (id, reserva) => api.put(`reservas/${id}/`, reserva);
+export const eliminarReserva = (id) => api.delete(`reservas/${id}/`);
+export const obtenerServicios = () => api.get('servicios/');
