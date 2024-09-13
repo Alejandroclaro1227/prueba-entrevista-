@@ -1,0 +1,16 @@
+Serializadores
+
+Creo el Serializadores es para convertir datos a JSON y viceversa.
+
+from rest_framework import serializers
+from .models import Reserva, Servicio
+
+class ServicioSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Servicio
+        fields = '__all__'
+
+class ReservaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Reserva
+        fields = '__all__'
