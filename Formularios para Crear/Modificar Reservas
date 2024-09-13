@@ -1,0 +1,56 @@
+Formularios para Crear/Modificar Reservas 
+
+import React, { useState } from 'react';
+import { crearReserva } from '../services/api';
+
+const CrearReservaForm = () => {
+  const [cliente, setCliente] = useState('');
+  const [servicio, setServicio] = useState('');
+  const [fechaReserva, setFechaReserva] = useState('');
+  const [numPersonas, setNumPersonas] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const nuevaReserva = {
+      cliente,
+      servicio,
+      fecha_reserva: fechaReserva,
+      num_personas: numPersonas,
+    };
+
+    crearReserva(nuevaReserva)
+      .then(response => alert('Reserva creada!'))
+      .catch(error => console.error(error));
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        placeholder="Cliente"
+        value={cliente}
+        onChange={(e) => setCliente(e.target.value)}
+      />
+      <input
+        type="text"
+        placeholder="Servicio"
+        value={servicio}
+        onChange={(e) => setServicio(e.target.value)}
+      />
+      <input
+        type="datetime-local"
+        value={fechaReserva}
+        onChange={(e) => setFechaReserva(e.target.value)}
+      />
+      <input
+        type="number"
+        placeholder="Número de Personas"
+        value={numPersonas}
+        onChange={(e) => setNumPersonas(e.target.value)}
+      />
+      <button type="submit">Crear Reserva</button>
+    </form>
+  );
+};
+
+export default CrearReservaForm;
